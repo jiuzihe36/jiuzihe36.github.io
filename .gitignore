@@ -3,4 +3,5 @@ node_modules/
 *.log
 .obsidian/
 _check.js
+_deploy.cjs
 
