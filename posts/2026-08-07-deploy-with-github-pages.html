@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>把静态博客部署到 GitHub Pages · Evan 的技术随笔</title>
+  <meta name="description" content="一个由 WorkBuddy 生成的静态博客 · 记录工程实践与思考">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="Evan 的技术随笔" href="/rss.xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">Evan 的技术随笔</a>
+      <nav class="nav">
+    <a href="/index.html">首页</a>
+    <a href="/about.html">关于</a>
+    <a href="/rss.xml">RSS</a></nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌓</button>
+    </div>
+  </header>
+  <main class="container">
+    
+        <article class="post">
+          <header class="post-head">
+            <h1>把静态博客部署到 GitHub Pages</h1>
+            <div class="meta"><time>2026-08-07</time> · <span class="tag">部署</span><span class="tag">运维</span></div>
+          </header>
+          <div class="post-body"><h1 id="把静态博客部署到-github-pages">把静态博客部署到 GitHub Pages</h1>
+<p>GitHub Pages 对个人项目几乎零成本，而且原生支持自定义域名。下面是标准流程。</p>
+<h2 id="两种仓库形态">两种仓库形态</h2>
+<ul>
+<li><strong>用户页</strong>：仓库名必须为 <code>&lt;用户名&gt;.github.io</code>，内容直接作为站点根</li>
+<li><strong>项目页</strong>：任意仓库，可在 Settings → Pages 中选择分支与目录</li>
+</ul>
+<h2 id="部署步骤">部署步骤</h2>
+<ol>
+<li>在仓库根目录放好构建好的静态文件（<code>index.html</code> 等）</li>
+<li>进入仓库 <strong>Settings → Pages</strong></li>
+<li>选择 <strong>Deploy from a branch</strong>，分支选 <code>main</code>，目录选 <code>/ (root)</code></li>
+<li>保存后等待一两分钟，访问 <code>https://&lt;用户名&gt;.github.io</code></li>
+</ol>
+<blockquote><p>提示：如果你用的是项目页，文章链接和 RSS 里的基地址要带上仓库名这个子路径。</p></blockquote>
+<h2 id="常见坑">常见坑</h2>
+<ul>
+<li>资源（CSS/JS）用了绝对路径 <code>/assets/...</code>，在子路径下会 404 —— 用相对路径或配置 <code>baseUrl</code></li>
+<li>忘记提交 <code>assets/</code> 目录，页面没有样式</li>
+<li>自定义域名后没加 <code>CNAME</code> 文件，下次部署被覆盖</li>
+</ul>
+<p>部署本身很简单，难的是把「可重复」这件事固化成习惯。</p></div>
+          <footer class="post-foot"><a href="/index.html">← 返回首页</a></footer>
+        </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> Evan · 由 WorkBuddy 静态生成</p>
+    </div>
+  </footer>
+  <script src="/assets/main.js"></script>
+</body>
+</html>

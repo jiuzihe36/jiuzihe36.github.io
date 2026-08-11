@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你好，世界：我的新博客上线了 · Evan 的技术随笔</title>
+  <meta name="description" content="一个由 WorkBuddy 生成的静态博客 · 记录工程实践与思考">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="Evan 的技术随笔" href="/rss.xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">Evan 的技术随笔</a>
+      <nav class="nav">
+    <a href="/index.html">首页</a>
+    <a href="/about.html">关于</a>
+    <a href="/rss.xml">RSS</a></nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌓</button>
+    </div>
+  </header>
+  <main class="container">
+    
+        <article class="post">
+          <header class="post-head">
+            <h1>你好，世界：我的新博客上线了</h1>
+            <div class="meta"><time>2026-08-11</time> · <span class="tag">随笔</span><span class="tag">公告</span></div>
+          </header>
+          <div class="post-body"><h1 id="你好-世界">你好，世界</h1>
+<p>这是博客的第一篇文章。它不是一个现成框架套出来的产物，而是我用 <a href="https://www.workbuddy.cn">WorkBuddy</a> 从零搭起来的——一个<strong>零运行时依赖</strong>的静态博客。</p>
+<h2 id="为什么自己搭">为什么自己搭</h2>
+<p>市面上的博客方案很多，但我想要的是：</p>
+<ul>
+<li><strong>完全可控</strong>：所有文件都在仓库里，不依赖任何第三方服务</li>
+<li><strong>极致简单</strong>：不需要数据库，不需要服务端渲染</li>
+<li><strong>随手可写</strong>：文章就是 <code>posts/</code> 里的一个 Markdown 文件</li>
+</ul>
+<blockquote><p>工程的乐趣，往往在于把复杂的东西做简单。</p></blockquote>
+<h2 id="它怎么工作">它怎么工作</h2>
+<p>整个站点只有一个生成器 <code>build.js</code>，负责把 Markdown 转成 HTML：</p>
+<pre data-lang="js"><code>const html = mdToHtml(postBody);   // 解析 Markdown
+fs.writeFileSync('index.html', render(layout, vars));</code></pre>
+<p>写完文章后，一条命令重新构建，再推送到 GitHub 即可。</p>
+<h2 id="接下来">接下来</h2>
+<p>我会在这里记录工程实践、读书笔记和一些碎碎念。如果你也喜欢「自己掌控一切」的感觉，欢迎一起折腾。</p></div>
+          <footer class="post-foot"><a href="/index.html">← 返回首页</a></footer>
+        </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> Evan · 由 WorkBuddy 静态生成</p>
+    </div>
+  </footer>
+  <script src="/assets/main.js"></script>
+</body>
+</html>

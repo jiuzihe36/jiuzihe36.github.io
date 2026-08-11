@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 · Evan 的技术随笔</title>
+  <meta name="description" content="一个由 WorkBuddy 生成的静态博客 · 记录工程实践与思考">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="Evan 的技术随笔" href="/rss.xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">Evan 的技术随笔</a>
+      <nav class="nav">
+    <a href="/index.html">首页</a>
+    <a href="/about.html">关于</a>
+    <a href="/rss.xml">RSS</a></nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌓</button>
+    </div>
+  </header>
+  <main class="container">
+    <article class="post"><div class="post-body"><h1 id="关于">关于</h1>
+<p>你好，我是 <strong>Evan</strong>。</p>
+<p>这是一个用 <a href="https://www.workbuddy.cn">WorkBuddy</a> 生成的静态博客，部署在 GitHub Pages 上。整个站点零运行时依赖，所有页面都由 <code>posts/</code> 目录下的 Markdown 文件构建而来。</p>
+<h2 id="技术栈">技术栈</h2>
+<ul>
+<li>纯静态 HTML / CSS / JS，无需数据库</li>
+<li>一个零依赖的 Node 生成器（<code>build.js</code>）</li>
+<li>部署在 GitHub Pages，免费且稳定</li>
+</ul>
+<h2 id="如何写新文章">如何写新文章</h2>
+<ol>
+<li>在 <code>posts/</code> 目录新建一个 <code>.md</code> 文件，文件名即文章地址</li>
+<li>在文件顶部写 frontmatter：</li>
+</ol>
+<pre data-lang="markdown"><code>---
+title: 文章标题
+date: 2026-08-11
+tags: 技术, 随笔
+excerpt: 一句话简介（可选）
+---
+
+正文用 Markdown 书写……</code></pre>
+<ol>
+<li>运行 <code>node build.js</code> 重新生成站点</li>
+<li>提交并推送到 GitHub</li>
+</ol>
+<p>欢迎随时给我留言交流。</p></div></article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> Evan · 由 WorkBuddy 静态生成</p>
+    </div>
+  </footer>
+  <script src="/assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f6f7f9;
+  --text: #1a1a1a;
+  --text-soft: #5b6470;
+  --accent: #2f6df6;
+  --border: #e6e8ec;
+  --code-bg: #f0f2f5;
+  --card: #ffffff;
+  --shadow: 0 1px 3px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.04);
+}
+[data-theme="dark"] {
+  --bg: #0f1115;
+  --bg-soft: #161a21;
+  --text: #e6e9ef;
+  --text-soft: #9aa3b2;
+  --accent: #6ea0ff;
+  --border: #232a35;
+  --code-bg: #1b212b;
+  --card: #161a21;
+  --shadow: 0 1px 3px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.site-header .container { display: flex; align-items: center; gap: 16px; height: 60px; }
+.brand { font-weight: 700; font-size: 18px; color: var(--text); text-decoration: none; }
+.nav { margin-left: auto; display: flex; gap: 18px; }
+.nav a { color: var(--text-soft); text-decoration: none; font-size: 15px; }
+.nav a:hover { color: var(--accent); }
+.theme-toggle { background: none; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 16px; padding: 4px 8px; color: var(--text); }
+
+.page-head { padding: 40px 0 8px; }
+.page-head h1 { font-size: 30px; margin: 0 0 6px; }
+.page-head p { color: var(--text-soft); margin: 0; }
+
+main.container { padding-top: 24px; padding-bottom: 64px; min-height: 60vh; }
+
+.post-list { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+.post-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, border-color .15s ease;
+}
+.post-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.post-card h2 { margin: 0 0 6px; font-size: 20px; }
+.post-card h2 a { color: var(--text); text-decoration: none; }
+.post-card h2 a:hover { color: var(--accent); }
+.meta { color: var(--text-soft); font-size: 13px; margin-bottom: 8px; }
+.excerpt { color: var(--text-soft); margin: 0 0 10px; }
+.read-more { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600; }
+.tag {
+  display: inline-block; background: var(--bg-soft); color: var(--text-soft);
+  border: 1px solid var(--border); border-radius: 999px; padding: 1px 10px; font-size: 12px; margin-left: 4px;
+}
+
+.post-head { margin: 32px 0 8px; }
+.post-head h1 { font-size: 30px; margin: 0 0 6px; }
+.post-body { margin-top: 8px; }
+.post-body h2 { font-size: 23px; margin: 32px 0 10px; border-left: 4px solid var(--accent); padding-left: 12px; }
+.post-body h3 { font-size: 19px; margin: 24px 0 8px; }
+.post-body p { margin: 14px 0; }
+.post-body a { color: var(--accent); }
+.post-body img { max-width: 100%; border-radius: 10px; margin: 12px 0; }
+.post-body blockquote {
+  margin: 16px 0; padding: 10px 16px; border-left: 4px solid var(--accent);
+  background: var(--bg-soft); border-radius: 0 8px 8px 0; color: var(--text-soft);
+}
+.post-body code {
+  background: var(--code-bg); padding: 2px 6px; border-radius: 6px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: 14px;
+}
+.post-body pre {
+  background: var(--code-bg); padding: 16px; border-radius: 12px; overflow-x: auto;
+  position: relative; border: 1px solid var(--border);
+}
+.post-body pre code { background: none; padding: 0; }
+.post-body pre[data-lang]::before {
+  content: attr(data-lang); position: absolute; top: 8px; right: 12px;
+  font-size: 11px; color: var(--text-soft); text-transform: uppercase;
+}
+.post-body ul, .post-body ol { padding-left: 24px; }
+.post-body li { margin: 6px 0; }
+.post-foot { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); }
+.post-foot a { color: var(--accent); text-decoration: none; }
+
+.site-footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--text-soft); font-size: 14px; }
+.site-footer p { margin: 0; text-align: center; }

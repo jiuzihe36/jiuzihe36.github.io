@@ -1,0 +1,10 @@
+{
+  "name": "evan-blog",
+  "version": "1.0.0",
+  "description": "A dependency-free static blog, ready for GitHub Pages.",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "node serve.js"
+  },
+  "license": "MIT"
+}

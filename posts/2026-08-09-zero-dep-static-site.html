@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>为什么我偏爱零依赖的静态站点 · Evan 的技术随笔</title>
+  <meta name="description" content="一个由 WorkBuddy 生成的静态博客 · 记录工程实践与思考">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="Evan 的技术随笔" href="/rss.xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">Evan 的技术随笔</a>
+      <nav class="nav">
+    <a href="/index.html">首页</a>
+    <a href="/about.html">关于</a>
+    <a href="/rss.xml">RSS</a></nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌓</button>
+    </div>
+  </header>
+  <main class="container">
+    
+        <article class="post">
+          <header class="post-head">
+            <h1>为什么我偏爱零依赖的静态站点</h1>
+            <div class="meta"><time>2026-08-09</time> · <span class="tag">技术</span><span class="tag">前端</span></div>
+          </header>
+          <div class="post-body"><h1 id="为什么我偏爱零依赖的静态站点">为什么我偏爱零依赖的静态站点</h1>
+<p>每次开新项目，我都会先问自己一个问题：<strong>这件事真的需要引入依赖吗？</strong></p>
+<h2 id="依赖的隐性成本">依赖的隐性成本</h2>
+<p>一个 npm 包背后，往往牵出一整棵依赖树。它们带来：</p>
+<ul>
+<li>安装时间</li>
+<li>安全审计负担</li>
+<li>版本漂移导致的「在我机器上能跑」</li>
+</ul>
+<p>对于个人博客这种需求稳定的场景，自己写一个 ~200 行的生成器，反而更省心。</p>
+<h2 id="一个最小可用的-markdown-解析器">一个最小可用的 Markdown 解析器</h2>
+<p>其实核心逻辑并不复杂：</p>
+<ol>
+<li>按空行切分块</li>
+<li>判断块类型（标题 / 列表 / 引用 / 代码块 / 段落）</li>
+<li>行内替换（加粗、链接、代码）</li>
+</ol>
+<pre data-lang="js"><code>text.replace(/\*\*([^*]+)\*\*/g, '&lt;strong&gt;$1&lt;/strong&gt;');</code></pre>
+<h2 id="取舍">取舍</h2>
+<p>零依赖不是银弹。如果你的站点需要评论、搜索、国际化，那引入成熟方案更划算。<strong>关键是想清楚边界。</strong></p>
+<p>我的原则：先把功能做小，确认它长期不变，再决定要不要自己写。</p></div>
+          <footer class="post-foot"><a href="/index.html">← 返回首页</a></footer>
+        </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> Evan · 由 WorkBuddy 静态生成</p>
+    </div>
+  </footer>
+  <script src="/assets/main.js"></script>
+</body>
+</html>
