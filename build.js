@@ -177,6 +177,14 @@ function render(template, vars) {
 }
 
 function build() {
+  // clean previous build output so deleted posts don't leave stale HTML behind.
+  // wrapped in try/catch: local sandbox may block unlink; CI deletes normally.
+  const safeUnlink = (p) => { try { if (fs.existsSync(p)) fs.unlinkSync(p); } catch (e) { /* ignore */ } };
+  ['index.html', 'about.html', 'rss.xml'].forEach((f) => safeUnlink(path.join(OUT_DIR, f)));
+  if (fs.existsSync(POSTS_DIR)) {
+    fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith('.html')).forEach((f) => safeUnlink(path.join(POSTS_DIR, f)));
+  }
+
   const layout = fs.readFileSync(path.join(SRC_DIR, 'layout.html'), 'utf8');
   const posts = readPosts();
 
