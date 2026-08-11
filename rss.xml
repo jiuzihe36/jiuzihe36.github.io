@@ -12,6 +12,13 @@
       <description>用 WorkBuddy 从零搭了一个零依赖静态博客，并部署到 GitHub Pages。记录一下为什么要自己做，以及它长什么样。</description>
     </item>
     <item>
+      <title>网页端写作验证</title>
+      <link>/posts/2026-08-11-web-write-test.html</link>
+      <guid>/posts/2026-08-11-web-write-test.html</guid>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 GMT</pubDate>
+      <description>这是一条用于验证网页端写作链路的临时文章。</description>
+    </item>
+    <item>
       <title>为什么我偏爱零依赖的静态站点</title>
       <link>/posts/2026-08-09-zero-dep-static-site.html</link>
       <guid>/posts/2026-08-09-zero-dep-static-site.html</guid>
